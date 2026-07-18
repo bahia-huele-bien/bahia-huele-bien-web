@@ -66,7 +66,7 @@ function comprar(i) {
 
     const mensaje =
 
-        "Hola! 👋 Quiero consultar por el perfume " +
+        "Hola! Quiero consultar por el perfume " +
 
         producto.nombre +
 
