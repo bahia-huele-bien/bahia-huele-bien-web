@@ -1,176 +1,352 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-background:#f8f8f8;
-
-color:#222;
-
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:20px 10%;
-
-background:white;
-
-box-shadow:0 0 15px rgba(0,0,0,.1);
-
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f7f3ee;
+    color: #1f1b18;
 }
 
-.logo{
 
-height:85px;
+/* =========================
+   HEADER
+========================= */
 
+header {
+    background-color: #171310;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav{
-
-display:flex;
-
-gap:25px;
-
+.marca h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
 }
 
-nav a{
-
-text-decoration:none;
-
-color:#111;
-
-font-weight:bold;
-
+.marca p {
+    font-size: 12px;
+    color: #c9a96e;
+    letter-spacing: 2px;
+    margin-top: 3px;
 }
 
-.hero{
-
-height:500px;
-
-background:#111;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
+nav {
+    display: flex;
+    gap: 25px;
 }
 
-.hero h1{
-
-font-size:60px;
-
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.hero p{
-
-margin-top:15px;
-
-font-size:25px;
-
+nav a:hover {
+    color: #c9a96e;
 }
 
-.boton{
 
-margin-top:30px;
+/* =========================
+   HERO
+========================= */
 
-background:#c69c32;
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(
+        rgba(23, 19, 16, 0.65),
+        rgba(23, 19, 16, 0.65)
+    ),
+    url("../img/fondo.jpeg");
 
-padding:15px 35px;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:10px;
-
+    background-size: cover;
+    background-position: center;
 }
 
-.titulo{
-
-text-align:center;
-
-font-size:40px;
-
-margin:60px;
-
+.hero-contenido {
+    max-width: 700px;
+    color: white;
 }
 
-#productos{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-
-padding:40px;
-
+.subtitulo {
+    color: #c9a96e;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
 }
 
-.card{
-
-background:white;
-
-padding:20px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-text-align:center;
-
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
-.card img{
-
-width:100%;
-
-height:320px;
-
-object-fit:cover;
-
-border-radius:10px;
-
+.hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
 
-.precio{
 
-font-size:28px;
+/* =========================
+   BOTONES
+========================= */
 
-margin-top:15px;
-
-color:#c69c32;
-
-font-weight:bold;
-
+.boton {
+    display: inline-block;
+    background-color: #c9a96e;
+    color: #171310;
+    padding: 13px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
-footer{
+.boton:hover {
+    background-color: #e0c48b;
+    transform: translateY(-2px);
+}
 
-background:#111;
 
-color:white;
+/* =========================
+   CATÁLOGO
+========================= */
 
-text-align:center;
+.catalogo {
+    padding: 80px 8%;
+    text-align: center;
+}
 
-padding:30px;
+.seccion-pequena {
+    color: #b18b4f;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
 
-margin-top:80px;
+.catalogo h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    color: #777;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   IMAGEN DEL PERFUME
+========================= */
+
+.imagen-producto {
+    height: 300px;
+    background-color: #f1ece5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.imagen-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.card:hover .imagen-producto img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   INFORMACIÓN DEL PRODUCTO
+========================= */
+
+.info-producto {
+    padding: 22px;
+    text-align: left;
+}
+
+.info-producto h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: 600;
+    color: #b18b4f;
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   BOTÓN COMPRAR
+========================= */
+
+.boton-comprar {
+    width: 100%;
+    border: none;
+    background-color: #171310;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-comprar:hover {
+    background-color: #c9a96e;
+    color: #171310;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    background-color: #171310;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contacto h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    color: #d0d0d0;
+    margin-bottom: 30px;
+}
+
+.whatsapp {
+    background-color: #c9a96e;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #0e0c0b;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #999;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .catalogo {
+        padding: 60px 20px;
+    }
+
+    .catalogo h2 {
+        font-size: 32px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+
+    .imagen-producto {
+        height: 320px;
+    }
 
 }
