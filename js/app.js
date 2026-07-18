@@ -1,34 +1,56 @@
 const contenedor = document.getElementById("productos");
 
-let carrito = [];
 
 function mostrarProductos() {
 
     contenedor.innerHTML = "";
 
+
     productos.forEach((producto, i) => {
 
         contenedor.innerHTML += `
 
-        <div class="card">
+        <article class="card">
 
-            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <div class="imagen-producto">
 
-            <h3>${producto.nombre}</h3>
+                <img
 
-            <p class="precio">
-                $${producto.precio.toLocaleString("es-AR")}
-            </p>
+                    src="${producto.imagen}"
 
-            <button onclick="agregar(${i})">
-                Agregar al carrito
-            </button>
+                    alt="${producto.nombre}"
 
-            <button onclick="comprar(${i})">
-                Comprar por WhatsApp
-            </button>
+                >
 
-        </div>
+            </div>
+
+
+            <div class="info-producto">
+
+                <h3>${producto.nombre}</h3>
+
+                <p class="precio">
+
+                    $${producto.precio.toLocaleString("es-AR")}
+
+                </p>
+
+
+                <button
+
+                    class="boton-comprar"
+
+                    onclick="comprar(${i})"
+
+                >
+
+                    Comprar por WhatsApp
+
+                </button>
+
+            </div>
+
+        </article>
 
         `;
 
@@ -36,28 +58,31 @@ function mostrarProductos() {
 
 }
 
-mostrarProductos();
-
-
-function agregar(i) {
-
-    carrito.push(productos[i]);
-
-    alert(productos[i].nombre + " agregado al carrito.");
-
-}
-
 
 function comprar(i) {
 
-    let mensaje =
-        "Hola, quiero comprar el perfume " +
-        productos[i].nombre +
+    const producto = productos[i];
+
+
+    const mensaje =
+
+        "Hola! 👋 Quiero consultar por el perfume " +
+
+        producto.nombre +
+
         ". ¿Sigue disponible?";
 
-    window.open(
+
+    const url =
+
         "https://wa.me/5492915020739?text=" +
-        encodeURIComponent(mensaje)
-    );
+
+        encodeURIComponent(mensaje);
+
+
+    window.open(url, "_blank");
 
 }
+
+
+mostrarProductos();
